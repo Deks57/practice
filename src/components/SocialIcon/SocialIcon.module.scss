@@ -1,0 +1,48 @@
+.btn {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid #0b0d20;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	cursor: pointer;
+	transition: border-color 0.25s ease;
+	text-decoration: none;
+}
+
+.circleSvg {
+	position: absolute;
+	inset: -1px;
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+	opacity: 0;
+	transition: opacity 0.25s ease;
+	pointer-events: none;
+}
+
+.btn svg {
+	position: absolute;
+	transition: opacity 0.25s ease;
+}
+
+.iconDefault {
+	opacity: 1;
+}
+.iconGradient {
+	opacity: 0;
+}
+
+.btn:hover {
+	border-color: transparent;
+}
+.btn:hover .circleSvg {
+	opacity: 1;
+}
+.btn:hover .iconDefault {
+	opacity: 0;
+}
+.btn:hover .iconGradient {
+	opacity: 1;
+}

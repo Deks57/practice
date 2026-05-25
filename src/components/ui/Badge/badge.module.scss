@@ -1,0 +1,73 @@
+.badge {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border-radius: 40px;
+	padding: 8px 18px 8px 32px;
+	width: 100%;
+	max-width: 280px;
+
+	background: var(--0b0d20);
+	transform: rotate(-3deg);
+
+	@media (max-width: 1023px) {
+		padding: 6px 18px 6px 28px;
+		max-width: 260px;
+	}
+
+	@media (max-width: 768px) {
+		padding: 4px 18px 4px 24px;
+		max-width: 190px;
+	}
+}
+
+.numberWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.number {
+	font-family: var(--third-family);
+	font-weight: 500;
+	font-size: 44px;
+	line-height: 100%;
+	background: linear-gradient(56deg, #2d41f9 0%, #9acbff 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
+}
+
+.label {
+	font-size: 20px;
+	background: linear-gradient(56deg, #2d41f9 0%, #9acbff 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-transform: uppercase;
+
+	@media (max-width: 768px) {
+		font-size: 10px;
+	}
+}
+
+.textWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.text {
+	font-family: var(--second-family);
+	font-size: 14px;
+	line-height: 125%;
+	color: var(--ffffff);
+	font-weight: 400;
+
+	@media (max-width: 768px) {
+		font-size: 10px;
+	}
+}
