@@ -22,7 +22,8 @@
 	pointer-events: none;
 }
 
-.btn svg {
+.iconDefault,
+.iconGradient {
 	position: absolute;
 	transition: opacity 0.25s ease;
 }
@@ -30,6 +31,7 @@
 .iconDefault {
 	opacity: 1;
 }
+
 .iconGradient {
 	opacity: 0;
 }
@@ -37,12 +39,15 @@
 .btn:hover {
 	border-color: transparent;
 }
+
 .btn:hover .circleSvg {
 	opacity: 1;
 }
+
 .btn:hover .iconDefault {
 	opacity: 0;
 }
+
 .btn:hover .iconGradient {
 	opacity: 1;
 }

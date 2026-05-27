@@ -1,0 +1,38 @@
+.item {
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	}
+}
+
+.projectImage {
+	border-radius: 24px;
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+
+.contentWrapper {
+	padding-top: 24px;
+}
+
+.projectTitle {
+	font-size: 24px;
+	margin-bottom: 12px;
+
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
+}
+
+.projectDescription {
+	font-weight: 500;
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
+}

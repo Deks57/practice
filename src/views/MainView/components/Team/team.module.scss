@@ -1,0 +1,192 @@
+.team {
+	margin: 120px 0;
+	background-image: url('/team-bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-radius: 24px;
+
+	@media (max-width: 1024px) {
+		margin: 72px 0;
+	}
+
+	@media (max-width: 768px) {
+		margin: 48px 0;
+		text-align: center;
+	}
+}
+
+.inner {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+	padding: 120px 70px 60px;
+	display: grid;
+	grid-template-columns: 0.7fr 1fr;
+	align-items: center;
+	gap: 28px;
+
+	@media (max-width: 1023px) {
+		padding: 72px 60px;
+		grid-template-columns: 0.9fr 1fr;
+	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+		padding: 48px 16px;
+	}
+}
+
+.title {
+	font-size: 48px;
+	color: var(--ffffff);
+	margin-bottom: 24px;
+
+	@media (max-width: 1023px) {
+		font-size: 32px;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 24px;
+	}
+}
+
+.subtitle {
+	margin-bottom: 20px;
+	color: var(--ffffff);
+	font-weight: 500;
+	line-height: 135%;
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
+}
+
+.detailsButton {
+	margin-bottom: 48px;
+
+	@media (max-width: 768px) {
+		margin-bottom: 30px;
+	}
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px 24px;
+
+	@media (max-width: 1024px) {
+		gap: 20px;
+	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 8px;
+	}
+}
+
+.number {
+	font-size: 86px;
+
+	@media (max-width: 1024px) {
+		font-size: 64px;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 40px;
+	}
+
+	&.blue {
+		background: linear-gradient(141deg, #6ca7ff 0%, #2d41f9 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	&.purple {
+		background: linear-gradient(141deg, #8b61e5 0%, #6720ff 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.description {
+	line-height: 125%;
+	font-weight: 500;
+
+	@media (max-width: 768px) {
+		font-size: 12px;
+	}
+}
+
+.imageContainer {
+	position: relative;
+	border-radius: 24px;
+	overflow: hidden;
+	aspect-ratio: 1 / 1;
+
+	&[data-id='1'] {
+		width: 472px;
+		height: 466px;
+
+		@media (max-width: 1024px) {
+			width: 360px;
+			height: 356px;
+		}
+
+		@media (max-width: 768px) {
+			width: 244px;
+			height: 244px;
+		}
+	}
+
+	&[data-id='2'] {
+		position: absolute;
+		width: 310px;
+		height: 209px;
+		transform: rotate(7deg);
+		top: 50px;
+		right: 150px;
+		z-index: 1;
+
+		@media (max-width: 1024px) {
+			width: 250px;
+			height: 150px;
+			top: 120px;
+			right: 70px;
+		}
+
+		@media (max-width: 768px) {
+			width: 183px;
+			height: 123px;
+			top: 80px;
+			right: 50px;
+		}
+	}
+
+	&[data-id='3'] {
+		position: absolute;
+		width: 261px;
+		height: 324px;
+		transform: rotate(-7deg);
+		bottom: -20px;
+		right: 200px;
+		z-index: 1;
+
+		@media (max-width: 1024px) {
+			width: 230px;
+			height: 280px;
+			bottom: 40px;
+			right: 100px;
+		}
+
+		@media (max-width: 768px) {
+			width: 119px;
+			height: 147px;
+			bottom: -20px;
+			right: 200px;
+		}
+	}
+}

@@ -2,28 +2,20 @@ import {
 	CIRCLE_GRADIENT_COORDS,
 	GRADIENT_STOPS,
 	ICON_GRADIENT_COORDS
-} from '@/constants/socialIcons'
+} from '@/shared/constants/socialIcons'
+import { FC, SVGProps } from 'react'
 import styles from './SocialIcon.module.scss'
+
+type IconComponent = FC<SVGProps<SVGSVGElement> & { gradientId?: string }>
 
 type Props = {
 	href: string
 	gradientId: string
-	path: string
-	viewBox: string
-	width: number
-	height: number
+	Icon: IconComponent
 	isDark?: boolean
 }
 
-export function SocialIcon({
-	href,
-	gradientId,
-	path,
-	viewBox,
-	width,
-	height,
-	isDark
-}: Props) {
+export function SocialIcon({ href, gradientId, Icon, isDark }: Props) {
 	const iconGradId = `${gradientId}-icon`
 	const circleGradId = `${gradientId}-circle`
 	const defaultColor = isDark ? '#FFFFFF' : '#0B0D20'
@@ -62,26 +54,9 @@ export function SocialIcon({
 			</svg>
 
 			<svg
-				className={styles.iconDefault}
-				width={width}
-				height={height}
-				viewBox={viewBox}
-				fill='none'
-				style={{ color: defaultColor }}>
-				<path
-					fillRule='evenodd'
-					clipRule='evenodd'
-					d={path}
-					fill='currentColor'
-				/>
-			</svg>
-
-			<svg
-				className={styles.iconGradient}
-				width={width}
-				height={height}
-				viewBox={viewBox}
-				fill='none'>
+				width='0'
+				height='0'
+				style={{ position: 'absolute' }}>
 				<defs>
 					<linearGradient
 						id={iconGradId}
@@ -95,13 +70,17 @@ export function SocialIcon({
 						))}
 					</linearGradient>
 				</defs>
-				<path
-					fillRule='evenodd'
-					clipRule='evenodd'
-					d={path}
-					fill={`url(#${iconGradId})`}
-				/>
 			</svg>
+
+			<Icon
+				className={styles.iconDefault}
+				style={{ color: defaultColor }}
+			/>
+
+			<Icon
+				className={styles.iconGradient}
+				gradientId={iconGradId}
+			/>
 		</a>
 	)
 }

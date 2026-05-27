@@ -1,3 +1,5 @@
+import { Footer } from '@/components/layout/Footer/Footer'
+import { Header } from '@/components/layout/Header'
 import type { Metadata } from 'next'
 import {
 	Geist,
@@ -74,8 +76,9 @@ export default function RootLayout({
         h-full antialiased
       `}>
 			<body>
-				<div style={{ width: '100%' }}></div>
+				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)
