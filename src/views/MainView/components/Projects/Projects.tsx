@@ -1,16 +1,18 @@
 'use client'
 
 import { Button } from '@/components/ui/Button/Button'
+import { ProjectCard } from '@/entities/project/ui/ProjectCard'
 import { projectsTabs } from '@/shared/config/projects.config'
 import { useHorizontalDragScroll } from '@/shared/hooks/useHorizontalDragScroll'
 import { useProjectsTabs } from '@/shared/hooks/useProjectsTabs'
-import Image from 'next/image'
 import styles from './projects.module.scss'
 
 export function Projects() {
 	const { activeTab, setActiveTab, projects } = useProjectsTabs()
-
 	const { containerRef, events } = useHorizontalDragScroll<HTMLDivElement>()
+
+	const leftColumn = projects.filter((_, index) => index % 2 === 0)
+	const rightColumn = projects.filter((_, index) => index % 2 === 1)
 
 	return (
 		<section className={styles.projects}>
@@ -38,29 +40,27 @@ export function Projects() {
 					</div>
 				</div>
 
-				<div className={styles.list}>
-					{projects.map((project, index) => (
-						<div
-							key={index}
-							className={`${styles.item} ${styles[`div${index + 1}`]}`}>
-							<div className={styles.imageWrapper}>
-								<Image
-									src={project.image}
-									alt={project.title}
-									width={652}
-									height={412}
-									className={styles.projectImage}
-								/>
-							</div>
-
-							<div className={styles.contentWrapper}>
-								<h3 className={styles.projectTitle}>{project.title}</h3>
-								<p className={styles.projectDescription}>
-									{project.description}
-								</p>
-							</div>
-						</div>
-					))}
+				<div className={styles.twoColumns}>
+					<div className={styles.column}>
+						{leftColumn.map((project) => (
+							<ProjectCard
+								key={project.id}
+								image={project.image}
+								title={project.title}
+								description={project.description}
+							/>
+						))}
+					</div>
+					<div className={styles.column}>
+						{rightColumn.map((project) => (
+							<ProjectCard
+								key={project.title}
+								image={project.image}
+								title={project.title}
+								description={project.description}
+							/>
+						))}
+					</div>
 				</div>
 
 				<Button
