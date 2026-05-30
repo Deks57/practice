@@ -1,52 +1,27 @@
-.item {
+.achievementsCard {
 	display: grid;
-	grid-template-columns: 96px 1fr;
-}
+	grid-template-columns: fluid(96, 80) 1fr;
 
-.itemIcon {
-	border-radius: 50px;
-	padding: 17px 16px;
-	width: 80px;
-	height: 80px;
-	background: var(--edeeff);
-	margin-right: 16px;
+	&__icon {
+		border-radius: 50px;
+		padding: 17px 16px;
+		width: fluid(80, 64);
+		height: fluid(80, 64);
+		background: var(--edeeff);
 
-	@media (max-width: 1024px) {
-		width: 72px;
-		height: 72px;
-		padding: 12px 11px;
+		@media (max-width: 1024px) {
+			padding: 12px 11px;
+		}
+
+		@media (max-width: 768px) {
+			padding: 13px 12px;
+		}
 	}
 
-	@media (max-width: 768px) {
-		width: 64px;
-		height: 64px;
-		border-radius: 40px;
-		padding: 13px 12px;
-	}
-}
-
-.rank {
-	font-size: 24px;
-	line-height: 125%;
-	padding-bottom: 6px;
-
-	@media (max-width: 1024px) {
-		font-size: 20px;
-	}
-
-	@media (max-width: 768px) {
-		font-size: 16px;
-	}
-}
-
-.itemDescription {
-	font-weight: 500;
-
-	@media (max-width: 1024px) {
-		font-size: 14px;
-	}
-
-	@media (max-width: 768px) {
-		font-size: 14px;
+	&__rank {
+		font-family: var(--third-family);
+		@include fluid-text(24, 16);
+		line-height: 125%;
+		padding-bottom: 6px;
 	}
 }

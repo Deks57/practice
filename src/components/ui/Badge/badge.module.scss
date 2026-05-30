@@ -1,73 +1,66 @@
 .badge {
+	font-family: var(--third-family);
 	display: flex;
 	align-items: center;
 	gap: 5px;
 	border-radius: 40px;
 	padding: 8px 18px 8px 32px;
 	width: 100%;
-	max-width: 280px;
-
+	max-width: fluid(280, 190);
 	background: var(--0b0d20);
 	transform: rotate(-3deg);
 
 	@media (max-width: 1023px) {
 		padding: 6px 18px 6px 28px;
-		max-width: 260px;
+		// max-width: 260px;
 	}
 
 	@media (max-width: 768px) {
 		padding: 4px 18px 4px 24px;
-		max-width: 190px;
+		// max-width: 190px;
 	}
-}
 
-.numberWrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.number {
-	font-family: var(--third-family);
-	font-weight: 500;
-	font-size: 44px;
-	line-height: 100%;
-	background: linear-gradient(56deg, #2d41f9 0%, #9acbff 100%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-
-	@media (max-width: 768px) {
-		font-size: 20px;
+	&__numberWrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
-}
 
-.label {
-	font-size: 20px;
-	background: linear-gradient(56deg, #2d41f9 0%, #9acbff 100%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	text-transform: uppercase;
-
-	@media (max-width: 768px) {
-		font-size: 10px;
+	&__number {
+		font-family: var(--third-family);
+		font-weight: 500;
+		@include fluid-text(44, 20);
+		line-height: 100%;
+		background: linear-gradient(56deg, #2d41f9 0%, #9acbff 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
-}
 
-.textWrapper {
-	display: flex;
-	flex-direction: column;
-}
+	&__label {
+		font-family: var(--third-family);
+		@include fluid-text(20, 9);
+		background: linear-gradient(56deg, #2d41f9 0%, #9acbff 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-transform: uppercase;
+	}
 
-.text {
-	font-family: var(--second-family);
-	font-size: 14px;
-	line-height: 125%;
-	color: var(--ffffff);
-	font-weight: 400;
+	&__textWrapper {
+		display: flex;
+		flex-direction: column;
+	}
 
-	@media (max-width: 768px) {
-		font-size: 10px;
+	&__text {
+		font-family: var(--second-family);
+		font-size: 14px;
+		line-height: 125%;
+		color: var(--ffffff);
+		font-weight: 400;
+
+		@media (max-width: 768px) {
+			font-size: 10px;
+		}
 	}
 }

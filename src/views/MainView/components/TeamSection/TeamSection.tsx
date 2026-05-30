@@ -1,27 +1,29 @@
 'use client'
 
 import { Button } from '@/components/ui/Button/Button'
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from './teamSection.module.scss'
 
-interface Props {}
-
-export function TeamSection({}: Props) {
+export function TeamSection() {
 	return (
-		<section className={styles.team}>
+		<section className={styles['team-section']}>
 			<div className='container'>
-				<div className={styles.inner}>
-					<img
-						src={'/team-section-card-img.png'}
+				<div className={styles['team-section__inner']}>
+					<Image
+						src='/team-section-card-img.png'
 						alt='team'
-						className={styles.backgroundImage}></img>
-					<div className={styles.content}>
-						<h2 className={styles.title}>
+						width={749}
+						height={962}
+						className={styles['team-section__background']}
+					/>
+					<div className={styles['team-section__content']}>
+						<h2 className={styles['team-section__title']}>
 							Мы всегда ищем новые <br /> таланты в нашу команду
 						</h2>
 
-						<div className={styles.info}>
-							<div className={styles.text}>
+						<div className={styles['team-section__info']}>
+							<div className={styles['team-section__text']}>
 								<p>
 									Работая в нашей команде, каждый день ты будешь делать и
 									узнавать что-то новое и интересное. Крутые знакомства,
@@ -30,15 +32,16 @@ export function TeamSection({}: Props) {
 								</p>
 							</div>
 
-							<div className={styles.actions}>
+							<div className={styles['team-section__actions']}>
 								<Button
 									text='Присоединяйся'
 									variant='default'
-									className={styles.ctaButton}></Button>
+									className={styles['team-section__cta-button']}
+								/>
 								<Link
 									href='#'
 									target='_blank'
-									className={styles.hhLink}>
+									className={styles['team-section__hh-link']}>
 									Вакансии на hh.ru
 								</Link>
 							</div>

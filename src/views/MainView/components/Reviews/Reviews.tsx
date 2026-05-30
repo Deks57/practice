@@ -1,12 +1,13 @@
 'use client'
 
+import clsx from 'clsx'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import { ReviewCard } from '@/entities/review'
 import { useReviewsSlider } from '@/shared/hooks/useReviewsSlider'
-import { ReviewCard } from '../../../../entities/review/ui/ReviewCard'
 import { reviewsData } from './reviews.data'
 import styles from './reviews.module.scss'
 
@@ -16,7 +17,7 @@ export function Reviews() {
 	return (
 		<section className={styles.reviews}>
 			<div className='container'>
-				<h1 className={styles.title}>Нам доверяют</h1>
+				<h2 className={styles.reviews__title}>Нам доверяют</h2>
 
 				<Swiper
 					modules={[Navigation, Pagination]}
@@ -40,15 +41,18 @@ export function Reviews() {
 					))}
 				</Swiper>
 
-				<div className={styles.navigation}>
+				<div className={styles.reviews__navigation}>
 					<button
 						ref={prevRef}
-						className={styles.navBtn}
+						className={styles['reviews__nav-btn']}
 					/>
 					<div className='reviews-pagination' />
 					<button
 						ref={nextRef}
-						className={`${styles.navBtn} ${styles.navBtnNext}`}
+						className={clsx(
+							styles['reviews__nav-btn'],
+							styles['reviews__nav-btn--next']
+						)}
 					/>
 				</div>
 			</div>

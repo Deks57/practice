@@ -1,64 +1,50 @@
-// reviews.module.scss
-.title {
-	font-size: 48px;
-	text-align: center;
-	margin-bottom: 48px;
-
-	@media (max-width: 1024px) {
-		font-size: 24px;
-		margin-bottom: 36px;
+.reviews {
+	&__title {
+		text-align: center;
+		margin-bottom: fluid(48, 24);
 	}
 
-	@media (max-width: 768px) {
-		font-size: 24px;
-		margin-bottom: 24px;
-	}
-}
-
-.navigation {
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	align-items: center;
-	justify-content: center;
-	gap: 40px;
-	margin-top: 24px;
-
-	@media (max-width: 1024px) {
-		gap: 24px;
-	}
-}
-
-.navBtn {
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-	border: none;
-	background: var(--edeeff);
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	&::after {
-		content: '';
-		background-image: url('/slider-arrow.svg');
-		width: 24px;
-		height: 24px;
-		background-repeat: no-repeat;
-		background-position: center;
+	&__navigation {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		align-items: center;
+		justify-content: center;
+		gap: fluid(40, 24);
+		margin-top: 24px;
 	}
 
-	&:hover {
-		background: #dfe2ff;
-	}
+	&__nav-btn {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		border: none;
+		background: var(--edeeff);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-	@media (max-width: 767px) {
-		display: none;
-	}
-}
+		&::after {
+			content: '';
+			background-image: url('/slider-arrow.svg');
+			width: 24px;
+			height: 24px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
 
-.navBtnNext {
-	transform: rotate(180deg);
+		&:hover {
+			background: #dfe2ff;
+		}
+
+		@include laptop {
+			display: none;
+		}
+
+		&--next {
+			transform: rotate(180deg);
+		}
+	}
 }
 
 :global(.reviews-pagination) {

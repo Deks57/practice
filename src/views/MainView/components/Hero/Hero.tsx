@@ -6,15 +6,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './hero.module.scss'
 
-interface Props {}
-
-export function Hero({}: Props) {
+export function Hero() {
 	return (
 		<section className={styles.hero}>
 			<div className='container'>
-				<div className={styles.inner}>
-					<div className={styles.content}>
-						<h1 className={styles.title}>
+				<div className={styles.hero__inner}>
+					<div className={styles.hero__content}>
+						<h1 className={styles.hero__title}>
 							Разрабатываем
 							<br />
 							сложные ITпродукты:
@@ -22,18 +20,18 @@ export function Hero({}: Props) {
 							е-ком, веб-сервисы, ИИ
 						</h1>
 
-						<div className={styles.heroWrapper}>
-							<div className={styles.actions}>
+						<div className={styles.hero__wrapper}>
+							<div className={styles.hero__actions}>
 								<Button
-									className={styles.heroButton}
+									className={styles.hero__button}
 									variant='dark'
 									text='Обсудить проект'
 								/>
 
-								<div className={styles.socials}>
+								<div className={styles.hero__socials}>
 									<Link
 										href='#'
-										className={styles.socialLink}>
+										className={styles['hero__social-link']}>
 										<Image
 											src='/icons/telegram.svg'
 											alt='Telegram'
@@ -44,7 +42,7 @@ export function Hero({}: Props) {
 
 									<Link
 										href='#'
-										className={styles.socialLink}>
+										className={styles['hero__social-link']}>
 										<Image
 											src='/icons/max.svg'
 											alt='OK'
@@ -55,7 +53,7 @@ export function Hero({}: Props) {
 
 									<Link
 										href='#'
-										className={styles.socialLink}>
+										className={styles['hero__social-link']}>
 										<Image
 											src='/icons/vk.svg'
 											alt='VK'

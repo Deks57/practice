@@ -1,0 +1,120 @@
+Index: next.config.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/next.config.ts b/next.config.ts
+--- a/next.config.ts	(revision d3aeb64d3130a18f834adec20a2ed10a4472def3)
++++ b/next.config.ts	(date 1780037091438)
+@@ -1,11 +1,21 @@
+ import type { NextConfig } from 'next'
+-import path from 'path'
++
++const sassOptions: NextConfig['sassOptions'] = {
++  additionalData: `
++    @use "./src/shared/styles/media-utils" as  *;
++    @use "./src/shared/styles/helpers" as  *;
++    `,
++};
+
+ const nextConfig: NextConfig = {
+   sassOptions: {
+-    includePaths: [path.join(process.cwd(), 'src')],
++    ...sassOptions,
+   },
+   reactCompiler: true,
++  experimental: {
++    cssChunking: 'strict',
++  },
++  output: 'standalone',
+ }
+
+ export default nextConfig
+\ No newline at end of file
+Index: src/shared/styles/media-utils.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/shared/styles/media-utils.scss b/src/shared/styles/media-utils.scss
+new file mode 100644
+--- /dev/null	(date 1742269156100)
++++ b/src/shared/styles/media-utils.scss	(date 1742269156100)
+@@ -0,0 +1,29 @@
++@mixin desktopMedium() {
++  @media screen and (max-width: 1680px) {
++    @content;
++  }
++}
++
++@mixin desktopSmall() {
++  @media screen and (max-width: 1240px) {
++    @content;
++  }
++}
++
++@mixin laptop() {
++  @media screen and (max-width: 768px) {
++    @content;
++  }
++}
++
++@mixin fullMobile() {
++  @media screen and (max-width: 576px) {
++    @content;
++  }
++}
++
++@mixin mobile() {
++  @media screen and (max-width: 375px) {
++    @content;
++  }
++}
+\ No newline at end of file
+Index: tsconfig.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tsconfig.json b/tsconfig.json
+--- a/tsconfig.json	(revision d3aeb64d3130a18f834adec20a2ed10a4472def3)
++++ b/tsconfig.json	(date 1780037126366)
+@@ -1,5 +1,6 @@
+ {
+   "compilerOptions": {
++    "baseUrl": ".",
+     "target": "ES2017",
+     "lib": ["dom", "dom.iterable", "esnext"],
+     "allowJs": true,
+Index: src/shared/styles/helpers.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/shared/styles/helpers.scss b/src/shared/styles/helpers.scss
+new file mode 100644
+--- /dev/null	(date 1765340711162)
++++ b/src/shared/styles/helpers.scss	(date 1765340711162)
+@@ -0,0 +1,21 @@
++@mixin onlyDesktopHover() {
++  @media not all and (pointer: coarse) {
++    &:hover {
++      @content;
++    }
++  }
++}
++
++@mixin onlyTouchDevice() {
++  @media (hover: none)  and (pointer: coarse) {
++    @content;
++  }
++}
++
++@mixin lineClamp($lines) {
++  overflow: hidden;
++  display: -webkit-box;
++  -webkit-box-orient: vertical;
++  -webkit-line-clamp: $lines;
++  line-clamp: $lines;
++}
+\ No newline at end of file

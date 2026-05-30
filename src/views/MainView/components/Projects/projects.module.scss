@@ -1,131 +1,65 @@
-.title {
-	font-size: 52px;
-	margin-bottom: 20px;
-	text-align: center;
-
-	@media (max-width: 1024px) {
-		font-size: 38px;
-	}
-	@media (max-width: 768px) {
-		font-size: 24px;
-	}
-}
-
-.tabsWrapper {
-	margin-bottom: 48px;
-	overflow-x: auto;
-	cursor: grab;
-	scrollbar-width: none;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	&:active {
-		cursor: grabbing;
+.projects {
+	&__title {
+		text-align: center;
+		@include fluid-text(52, 24);
 	}
 
-	@media (max-width: 1024px) {
-		margin-bottom: 32px;
-	}
-	@media (max-width: 768px) {
-		margin-bottom: 24px;
-	}
-}
+	&__wrapper {
+		margin-block: fluid(48, 24);
+		overflow-x: auto;
+		cursor: grab;
+		scrollbar-width: none;
 
-.tabs {
-	display: flex;
-	gap: 12px;
-}
-
-.tabButton {
-	white-space: nowrap;
-	user-select: none;
-}
-
-.twoColumns {
-	display: flex;
-	gap: 20px;
-	margin-bottom: 70px;
-
-	@media (max-width: 768px) {
-		flex-direction: column;
-		gap: 40px;
-		margin-bottom: 24px;
-	}
-}
-
-.column {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	gap: 62px;
-
-	&:nth-child(2) {
-		margin-top: 190px;
-	}
-
-	@media (max-width: 1024px) {
-		gap: 42px;
-	}
-
-	@media (max-width: 768px) {
-		gap: 24px;
-
-		&:nth-child(2) {
-			margin-top: 0;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		&:active {
+			cursor: grabbing;
 		}
 	}
-}
 
-.item {
-	transition:
-		transform 0.3s ease,
-		box-shadow 0.3s ease;
-
-	&:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	&__tabs {
+		display: flex;
+		gap: 12px;
 	}
-}
 
-.projectImage {
-	border-radius: 24px;
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-.imageWrapper {
-	overflow: hidden;
-	border-radius: 24px;
-}
-
-.contentWrapper {
-	padding-top: 24px;
-}
-
-.projectTitle {
-	font-size: 24px;
-	margin-bottom: 12px;
-
-	@media (max-width: 768px) {
-		font-size: 20px;
+	&__tab-button {
+		white-space: nowrap;
+		user-select: none;
 	}
-}
 
-.projectDescription {
-	font-weight: 500;
+	&__columns {
+		display: flex;
+		gap: 20px;
+		margin-bottom: fluid(70, 24);
 
-	@media (max-width: 768px) {
-		font-size: 14px;
+		@include laptop {
+			flex-direction: column;
+		}
 	}
-}
 
-.loadButton {
-	display: block;
-	margin: 0 auto;
+	&__column {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: fluid(62, 24);
 
-	@media (max-width: 768px) {
-		font-size: 14px;
+		&:nth-child(2) {
+			margin-top: 190px;
+		}
+		@include laptop {
+			&:nth-child(2) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__button {
+		display: block;
+		margin: 0 auto;
+
+		@include laptop {
+			font-size: 14px;
+		}
 	}
 }

@@ -10,10 +10,10 @@ interface ReviewCardProps {
 
 export function ReviewCard({ review }: ReviewCardProps) {
 	return (
-		<div className={styles.card}>
-			<div className={styles.cardTop}>
-				<h3 className={styles.reviewTitle}>{review.title}</h3>
-				<div className={styles.icon}>
+		<div className={styles['review-card']}>
+			<div className={styles['review-card__top']}>
+				<h3 className={styles['review-card__title']}>{review.title}</h3>
+				<div className={styles['review-card__icon']}>
 					<Image
 						src='/notebook.svg'
 						alt=''
@@ -22,10 +22,10 @@ export function ReviewCard({ review }: ReviewCardProps) {
 					/>
 				</div>
 			</div>
-			<div className={styles.cardBottom}>
-				<p className={styles.text}>{review.text}</p>
-				<div className={styles.author}>
-					<div className={styles.avatarPlaceholder}>
+			<div className={styles['review-card__bottom']}>
+				<p className={styles['review-card__text']}>{review.text}</p>
+				<div className={styles['review-card__author']}>
+					<div className={styles['review-card__avatar']}>
 						{review.avatar ? (
 							<Image
 								width={44}
@@ -45,8 +45,8 @@ export function ReviewCard({ review }: ReviewCardProps) {
 						)}
 					</div>
 					<div>
-						<div className={styles.name}>{review.name}</div>
-						<div className={styles.role}>{review.role}</div>
+						<div className={styles['review-card__name']}>{review.name}</div>
+						<div className={styles['review-card__role']}>{review.role}</div>
 					</div>
 				</div>
 			</div>

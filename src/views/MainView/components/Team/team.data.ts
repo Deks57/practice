@@ -4,7 +4,7 @@ export const teamStats = [
 		number: '40',
 		description:
 			'штатных сотрудников: аналитики, дизайнеры, разработчики, тестировщики, деловцы',
-		colorClass: 'blue' // ← добавляем поле для стиля
+		colorClass: 'blue'
 	},
 	{
 		id: 2,

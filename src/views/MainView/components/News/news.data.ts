@@ -1,4 +1,4 @@
-import { NewsData } from '../../../../entities/news/ui/newsCard'
+import { NewsData } from '../../../../entities/news/ui/NewsCard'
 
 export const newsData: NewsData[] = [
 	{

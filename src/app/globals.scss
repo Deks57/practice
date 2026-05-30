@@ -30,13 +30,12 @@
 }
 
 body {
-	font-family: var(--font-family);
+	font-family: var(--second-family);
 	background-color: var(--ffffff);
 	font-weight: 600;
 	color: var(--0b0d20);
 	width: 100%;
 	overflow-x: hidden;
-	// height: 10000px;
 }
 
 .container {
@@ -62,12 +61,12 @@ h1 {
 }
 
 h2 {
-	font-size: 48px;
+	@include fluid-text(48, 24);
 	font-family: var(--third-family);
 }
 
 h3 {
-	font-size: 36px;
+	@include fluid-text(36, 16);
 	font-family: var(--third-family);
 }
 
@@ -84,4 +83,10 @@ h5 {
 h6 {
 	font-size: 16px;
 	font-family: var(--third-family);
+}
+
+p {
+	@include fluid-text(16, 14);
+	font-weight: 500;
+	margin: 0;
 }

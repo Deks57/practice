@@ -5,6 +5,7 @@ import { News } from './components/News/News'
 import { Projects } from './components/Projects/Projects'
 import { Reviews } from './components/Reviews/Reviews'
 import { Team } from './components/Team/Team'
+import { TeamSection } from './components/TeamSection/TeamSection'
 
 export function MainView() {
 	return (
@@ -12,10 +13,11 @@ export function MainView() {
 			<Hero />
 			<Achievements />
 			<Projects />
-			<News />
 			<Team />
 			<Reviews />
 			<Banner />
+			<News />
+			<TeamSection />
 		</main>
 	)
 }

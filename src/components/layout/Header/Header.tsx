@@ -29,12 +29,15 @@ export function Header() {
 
 	return (
 		<>
-			<header className={clsx(styles.header, { [styles.scrolled]: isDark })}>
+			<header
+				className={clsx(styles.header, {
+					[styles['header--scrolled']]: isDark
+				})}>
 				<div className='container'>
-					<div className={styles.inner}>
+					<div className={styles.header__inner}>
 						<Link
 							href='/'
-							className={styles.logo}>
+							className={styles.header__logo}>
 							<Image
 								src='/logo.svg'
 								alt='logo'
@@ -43,19 +46,19 @@ export function Header() {
 							/>
 						</Link>
 
-						<nav className={styles.headerMenu}>
+						<nav className={styles.header__menu}>
 							{navMenu.map((item, index) => (
 								<Link
 									key={index}
 									href={item.href}
-									className={styles.headerMenuItem}>
+									className={styles['header__menu-item']}>
 									{item.label}
 								</Link>
 							))}
 						</nav>
 
-						<div className={styles.socials}>
-							<div className={styles.desktopSocials}>
+						<div className={styles.header__socials}>
+							<div className={styles['header__desktop-socials']}>
 								<SocialIcon
 									href='/'
 									gradientId='tg'
@@ -76,7 +79,7 @@ export function Header() {
 								/>
 							</div>
 
-							<div className={styles.mobileSocials}>
+							<div className={styles['header__mobile-socials']}>
 								<SocialIcon
 									href='/'
 									gradientId='mobile-tg'
@@ -89,7 +92,7 @@ export function Header() {
 				</div>
 			</header>
 
-			<div className={styles.burgerWrapper}>
+			<div className={styles['burger-wrapper']}>
 				<BurgerButton
 					isOpen={isMobileMenuOpen}
 					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

@@ -8,9 +8,25 @@ import {
 	Manrope,
 	Montserrat,
 	Roboto,
-	Rubik
+	Rubik,
+	Unbounded,
+	Wix_Madefor_Text
 } from 'next/font/google'
 import './globals.scss'
+
+const wixMadeforText = Wix_Madefor_Text({
+	subsets: ['latin', 'cyrillic'],
+	weight: ['400', '500', '600', '700', '800'],
+	variable: '--second-family',
+	display: 'swap'
+})
+
+const unbounded = Unbounded({
+	subsets: ['latin', 'cyrillic'],
+	weight: ['400', '500', '600', '700', '800', '900'],
+	variable: '--third-family',
+	display: 'swap'
+})
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -66,13 +82,8 @@ export default function RootLayout({
 		<html
 			lang='ru'
 			className={`
-        ${geistSans.variable} 
-        ${geistMono.variable}
-        ${inter.variable}
-        ${rubik.variable}
-        ${montserrat.variable}
-        ${manrope.variable}
-        ${roboto.variable}
+				${wixMadeforText.variable}
+				${unbounded.variable}
         h-full antialiased
       `}>
 			<body>

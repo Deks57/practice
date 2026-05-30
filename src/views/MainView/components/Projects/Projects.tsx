@@ -17,16 +17,16 @@ export function Projects() {
 	return (
 		<section className={styles.projects}>
 			<div className='container'>
-				<h2 className={styles.title}>Наши проекты</h2>
+				<h1 className={styles.projects__title}>Наши проекты</h1>
 
 				<div
-					className={styles.tabsWrapper}
+					className={styles.projects__wrapper}
 					ref={containerRef}
 					onMouseDown={events.onMouseDown}
 					onMouseLeave={events.onMouseLeave}
 					onMouseUp={events.onMouseUp}
 					onMouseMove={events.onMouseMove}>
-					<div className={styles.tabs}>
+					<div className={styles.projects__tabs}>
 						{projectsTabs.map((tab) => (
 							<Button
 								key={tab.id}
@@ -34,14 +34,14 @@ export function Projects() {
 								variant='light'
 								isActive={activeTab === tab.id}
 								onClick={() => setActiveTab(tab.id)}
-								className={styles.tabButton}
+								className={styles['projects__tab-button']}
 							/>
 						))}
 					</div>
 				</div>
 
-				<div className={styles.twoColumns}>
-					<div className={styles.column}>
+				<div className={styles.projects__columns}>
+					<div className={styles.projects__column}>
 						{leftColumn.map((project) => (
 							<ProjectCard
 								key={project.id}
@@ -51,10 +51,10 @@ export function Projects() {
 							/>
 						))}
 					</div>
-					<div className={styles.column}>
+					<div className={styles.projects__column}>
 						{rightColumn.map((project) => (
 							<ProjectCard
-								key={project.title}
+								key={project.id}
 								image={project.image}
 								title={project.title}
 								description={project.description}
@@ -66,7 +66,7 @@ export function Projects() {
 				<Button
 					text='Загрузить еще'
 					variant='dark'
-					className={styles.loadButton}
+					className={styles.projects__button}
 				/>
 			</div>
 		</section>

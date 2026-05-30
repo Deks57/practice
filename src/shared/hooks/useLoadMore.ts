@@ -1,6 +1,6 @@
 'use client'
 
-import { NewsData } from '@/entities/news/ui/newsCard'
+import { NewsData } from '@/entities/news/ui/NewsCard'
 import { useEffect, useState } from 'react'
 
 const MOBILE_BREAKPOINT = 768

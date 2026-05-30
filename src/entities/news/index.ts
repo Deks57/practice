@@ -1,2 +1,2 @@
-export { NewsCard } from './ui/newsCard'
-export type { NewsData } from './ui/newsCard'
+export { NewsCard } from './ui/NewsCard'
+export type { NewsData } from './ui/NewsCard'

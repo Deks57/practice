@@ -1,8 +1,8 @@
 'use client'
 
 import { Button } from '@/components/ui/Button/Button'
+import { NewsCard } from '@/entities/news'
 import { useLoadMore } from '@/shared/hooks/useLoadMore'
-import { NewsCard } from '../../../../entities/news/ui/newsCard'
 import { newsData } from './news.data'
 import styles from './news.module.scss'
 
@@ -10,11 +10,10 @@ export function News() {
 	const { visibleNews, loadMore, hasMore } = useLoadMore(newsData)
 
 	return (
-		<section className={styles.section}>
+		<section className={styles.news}>
 			<div className='container'>
-				<h1 className={styles.title}>Новости</h1>
-
-				<div className={styles.grid}>
+				<h2 className={styles.news__title}>Новости</h2>
+				<div className={styles.news__grid}>
 					{visibleNews.map((item) => (
 						<NewsCard
 							key={item.id}
@@ -24,11 +23,11 @@ export function News() {
 				</div>
 
 				{hasMore && (
-					<div className={styles.loadMoreWrapper}>
+					<div className={styles['news__load-more-wrapper']}>
 						<Button
 							variant='default'
 							text='Загрузить ещё'
-							className={styles.loadMoreButton}
+							className={styles['news__load-more-button']}
 							onClick={loadMore}
 						/>
 					</div>

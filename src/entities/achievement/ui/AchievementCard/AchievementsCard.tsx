@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { AchievementCardProps } from './AchievementCard.types'
+import { AchievementCardProps } from './achievementCard.types'
 import styles from './achievementsCard.module.scss'
 
 export function AchievementCard({
@@ -8,19 +8,19 @@ export function AchievementCard({
 	description
 }: AchievementCardProps) {
 	return (
-		<div className={styles.item}>
-			<div className={styles.itemHeader}>
+		<div className={styles.achievementsCard}>
+			<div>
 				<Image
 					src={icon}
 					alt=''
 					width={80}
 					height={80}
-					className={styles.itemIcon}
+					className={styles.achievementsCard__icon}
 				/>
 			</div>
-			<div className={styles.itemText}>
-				<span className={styles.rank}>{rank}</span>
-				<p className={styles.itemDescription}>{description}</p>
+			<div className={styles.achievementsCard__text}>
+				<span className={styles.achievementsCard__rank}>{rank}</span>
+				<p>{description}</p>
 			</div>
 		</div>
 	)

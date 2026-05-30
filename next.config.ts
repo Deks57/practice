@@ -1,11 +1,21 @@
 import type { NextConfig } from 'next'
-import path from 'path'
+
+const sassOptions: NextConfig['sassOptions'] = {
+  additionalData: `
+    @use "./src/shared/styles/media-utils" as  *;
+    @use "./src/shared/styles/helpers" as  *;
+    `,
+};
 
 const nextConfig: NextConfig = {
   sassOptions: {
-    includePaths: [path.join(process.cwd(), 'src')],
+    ...sassOptions,
   },
   reactCompiler: true,
+  experimental: {
+    cssChunking: 'strict',
+  },
+  output: 'standalone',
 }
 
 export default nextConfig

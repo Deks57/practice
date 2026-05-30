@@ -6,8 +6,8 @@ export function Achievements() {
 	return (
 		<section className={styles.achievements}>
 			<div className='container'>
-				<h1 className={styles.title}>Награды студии</h1>
-				<div className={styles.list}>
+				<h2 className={styles.achievements__title}>Награды студии</h2>
+				<div className={styles.achievements__list}>
 					{achievementsData.map((item) => (
 						<AchievementCard
 							key={item.id}
